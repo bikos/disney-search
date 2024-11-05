@@ -2,15 +2,15 @@ import { useState, useEffect } from 'react';
 import { UserProfile } from '@/types/user';
 
 const DEFAULT_PROFILE: UserProfile = {
-  firstName: '',
-  lastName: '',
-  city: '',
-  state: '',
-  favoriteCharacter: '',
-  favoriteMovie: '',
-  favoriteDisneyland: '',
+  firstName: 'Mickey',
+  lastName: 'Mouse',
+  city: 'Anaheim',
+  state: 'CA',
+  favoriteCharacter: 'Donald Duck',
+  favoriteMovie: 'Fantasia',
+  favoriteDisneyland: 'Disneyland Resort (California)',
   lastUpdated: new Date().toISOString(),
-  birthday: ''
+  birthday: '1928-11-18'
 };
 
 export function useUserProfile() {
@@ -22,6 +22,10 @@ export function useUserProfile() {
     const savedProfile = localStorage.getItem('userProfile');
     if (savedProfile) {
       setProfile(JSON.parse(savedProfile));
+    } else {
+      // Set default profile for new users
+      setProfile(DEFAULT_PROFILE);
+      localStorage.setItem('userProfile', JSON.stringify(DEFAULT_PROFILE));
     }
   }, []);
 

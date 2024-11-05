@@ -1,6 +1,6 @@
 import { useUserProfile } from '@/hooks/useUserProfile';
 import { UserProfile as UserProfileType } from '@/types/user';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function UserProfile() {
 
@@ -39,6 +39,10 @@ function UserProfile() {
 
   const { profile, isEditing, setIsEditing, updateProfile } = useUserProfile();
   const [formData, setFormData] = useState<UserProfileType>(profile);
+
+  useEffect(() => {
+    setFormData(profile);
+  }, [profile]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
