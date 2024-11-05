@@ -9,28 +9,24 @@ A web application built with React + TypeScript + Vite that allows users to sear
 ### Prerequisites
 
 - Node.js (v16 or higher)
-- npm or yarn
+- npm 
 
 ### Local Development
 
 1. Clone the repository
 ```bash
-git clone <your-repo-url>
-cd <your-repo-name>
+git clone https://github.com/bikos/disney-search.git
+cd disney-search
 ```
 
 2. Install dependencies
 ```bash
 npm install
-# or
-yarn install
 ```
 
 3. Start the development server
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
 4. Open your browser and visit `http://localhost:5173`
@@ -40,8 +36,6 @@ yarn dev
 To create a production build:
 ```bash
 npm run build
-# or
-yarn build
 ```
 
 

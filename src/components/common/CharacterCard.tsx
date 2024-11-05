@@ -34,7 +34,7 @@ export function CharacterCard({ id, name, imageUrl, films }: CharacterCardProps)
         </div>
         <Link
           to={`/character/${id}`}
-          className="text-xs font-black underline font-[lato] mt-auto"
+          className="text-xs font-black hover:scale-105 transition-all duration-100 underline font-[lato] mt-auto"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
           VIEW PROFILE
